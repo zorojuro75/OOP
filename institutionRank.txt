@@ -1,6 +1,0 @@
-IUB,49
-NSU,81
-AIUB,86
-IUB,92
-iub,56
-IUB,35

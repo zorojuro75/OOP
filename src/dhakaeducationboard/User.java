@@ -12,10 +12,10 @@ import java.io.Serializable;
  * @author anikb
  */
 public class User implements Serializable{
-    private String userName;
-    private String userid;
-    private String email;
-
+    protected String userName;
+    protected String userid;
+    protected String email;
+    protected String password;
     public User() {
     }
 
@@ -30,7 +30,6 @@ public class User implements Serializable{
     public String toString() {
         return "Person{" + "userName=" + userName + ", userid=" + userid + ", password=" + password + '}';
     }
-    private String password;
 
     public String getUserName() {
         return userName;
@@ -63,5 +62,11 @@ public class User implements Serializable{
     public void setEmail(String email) {
         this.email = email;
     }
+    public boolean verificataion(String id, String pass){
+        if(userid.equals(id) && pass.equals(password)){
+            return true;
+        }
+        return false;
+    } 
 }
 

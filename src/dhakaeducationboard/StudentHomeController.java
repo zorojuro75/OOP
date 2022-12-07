@@ -37,7 +37,7 @@ public class StudentHomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    public void init(String name, int id){
+    public void init(String name, String id){
         nameLabel.setText("Name : "+ name);
         idLabel.setText("ID : "+ id);
     }
