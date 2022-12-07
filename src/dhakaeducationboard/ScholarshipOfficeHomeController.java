@@ -21,14 +21,14 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author willi
+ * @author anikb
  */
 public class ScholarshipOfficeHomeController implements Initializable {
 
     @FXML
-    private Label idLabel;
-    @FXML
     private Label nameLabel;
+    @FXML
+    private Label idLabel;
 
     /**
      * Initializes the controller class.
@@ -36,7 +36,7 @@ public class ScholarshipOfficeHomeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }
+    }    
 
     @FXML
     private void viewScholarshipStudents(MouseEvent event) {
@@ -56,12 +56,12 @@ public class ScholarshipOfficeHomeController implements Initializable {
 
     @FXML
     private void viewRankings(MouseEvent event) throws IOException {
-        Parent viewRankingsParent = FXMLLoader.load(getClass().getResource("viewRankings.fxml"));
-        Scene viewRankingsScene = new Scene(viewRankingsParent);
-        Stage viewRankingsStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        viewRankingsStage.setScene(viewRankingsScene);
-        viewRankingsStage.setTitle("Dhaka Education Board");
-        viewRankingsStage.show();
+        Parent studentPublicExamOption1Parent = FXMLLoader.load(getClass().getResource("viewRankings.fxml"));
+        Scene studentPublicExamOption1Scene = new Scene(studentPublicExamOption1Parent);
+        Stage studentPublicExamOption1Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        studentPublicExamOption1Stage.setScene(studentPublicExamOption1Scene);
+        studentPublicExamOption1Stage.setTitle("Dhaka Education Board");
+        studentPublicExamOption1Stage.show();
     }
 
     @FXML
@@ -70,6 +70,7 @@ public class ScholarshipOfficeHomeController implements Initializable {
 
     @FXML
     private void scholarshipBudgetRequests(MouseEvent event) {
+        
     }
 
     @FXML
@@ -79,5 +80,5 @@ public class ScholarshipOfficeHomeController implements Initializable {
     @FXML
     private void logout(MouseEvent event) {
     }
-
+    
 }

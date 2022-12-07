@@ -5,7 +5,6 @@
  */
 package dhakaeducationboard;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -43,17 +42,13 @@ public class LoginController implements Initializable {
 
     @FXML
     private void loginOnClick(MouseEvent event) {
-        File f = null;
-        FileInputStream fis = null;
         ObjectInputStream ois = null;
         String userid = userIdTextField.getText();
         Character ch = userid.charAt(0);
         if (ch.equals('1')) {
             try {
-                f = new File("Student.bin");
-                fis = new FileInputStream(f);
-                ois = new ObjectInputStream(fis);
                 Student s;
+                ois = new ObjectInputStream(new FileInputStream("Student.bin"));
                 while (true) {
                     s = (Student) ois.readObject();
                     System.out.println(s.getName());
@@ -64,20 +59,22 @@ public class LoginController implements Initializable {
                         if (passwordTextField.getText().equals(s.getPassword())) {
                             FXMLLoader loader = new FXMLLoader();
                             loader.setLocation(getClass().getResource("studentHome.fxml"));
-                            Parent studentHomeParent = loader.load();
+                            Parent registrationFormParent = loader.load();
 
-                            Scene studentHomeScene = new Scene(studentHomeParent);
+                            //Parent personViewParent = FXMLLoader.load(getClass().getResource("FXMLScene2.fxml"));
+                            Scene registrationFormScene = new Scene(registrationFormParent);
 
+                            //access the controller
                             StudentHomeController controller = loader.getController();
 
+                            //controller = new PersonViewSceneController();
                             controller.init(s.getName(), s.getUserID());
 
-                            Stage studentHomeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            studentHomeStage.setScene(studentHomeScene);
-                            studentHomeStage.setTitle("Dhaka Education Board");
-                            studentHomeStage.show();
+                            Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            registrationFormStage.setScene(registrationFormScene);
+                            registrationFormStage.setTitle("Dhaka Education Board");
+                            registrationFormStage.show();
                         }
-                        
                     }
                 }
             } catch (Exception ex) {
@@ -91,7 +88,7 @@ public class LoginController implements Initializable {
         } else if (ch.equals('2')) {
             try {
                 Institution s;
-                ois = new ObjectInputStream(new FileInputStream("institution.bin"));
+                ois = new ObjectInputStream(new FileInputStream("Institution.bin"));
                 while (true) {
                     s = (Institution) ois.readObject();
                     System.out.println(s.getName());
@@ -100,12 +97,12 @@ public class LoginController implements Initializable {
                     System.out.println(s.getUserID());
                     if (Integer.parseInt(userIdTextField.getText()) == s.getUserID()) {
                         if (passwordTextField.getText().equals(s.getPassword())) {
-                            Parent scholarshipOfficeHomeParent = FXMLLoader.load(getClass().getResource("instituitionHome.fxml"));
-                            Scene scholarshipOfficeHomeScene = new Scene(scholarshipOfficeHomeParent);
-                            Stage scholarshipOfficeHomeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            scholarshipOfficeHomeStage.setScene(scholarshipOfficeHomeScene);
-                            scholarshipOfficeHomeStage.setTitle("Dhaka Education Board");
-                            scholarshipOfficeHomeStage.show();
+                            Parent institutionHomeParent = FXMLLoader.load(getClass().getResource("instituitionHome.fxml"));
+                            Scene institutionHomeScene = new Scene(institutionHomeParent);
+                            Stage institutionHomeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            institutionHomeStage.setScene(institutionHomeScene);
+                            institutionHomeStage.setTitle("Dhaka Education Board");
+                            institutionHomeStage.show();
                         }
                     }
                 }

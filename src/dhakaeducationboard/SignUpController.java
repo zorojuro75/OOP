@@ -43,7 +43,7 @@ public class SignUpController implements Initializable {
     private TextField emailTextField;
     @FXML
     private ComboBox<String> userTypeCombo;
-
+    
     private ArrayList<Student> studentArr;
     private ArrayList<Institution> institutionArr;
     private ArrayList<Teacher> teacherArr;
@@ -52,13 +52,12 @@ public class SignUpController implements Initializable {
     private ArrayList<OfficeAdministrator> adminArr;
     private ArrayList<EducationMinister> emArr;
     private ArrayList<ScholarshipOffice> scholarshipArr;
-
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        userTypeCombo.getItems().addAll("Student", "Institution", "Teacher", "Head Of Examination", "Registrar Office", "Office Administrator", "Education Minister", "Scholarship Office");
+        userTypeCombo.getItems().addAll("Student","Institution","Teacher","Head Of Examination","Registrar Office","Office Administrator", "Education Minister", "Scholarship Office");
         userTypeCombo.setValue("Student");
         studentArr = new ArrayList<Student>();
         institutionArr = new ArrayList<Institution>();
@@ -68,113 +67,118 @@ public class SignUpController implements Initializable {
         adminArr = new ArrayList<OfficeAdministrator>();
         emArr = new ArrayList<EducationMinister>();
         scholarshipArr = new ArrayList<ScholarshipOffice>();
-    }
+    }    
 
     @FXML
     private void createAccountOnClick(MouseEvent event) throws IOException {
-        String filename = userTypeCombo.getValue() + ".bin";
-        File file = new File(filename);
-        FileOutputStream fos = null;
+        String filename = userTypeCombo.getValue()+".bin";
+        File file = new File (filename);
         ObjectOutputStream oos = null;
-        boolean append = true;
+        boolean append = true; 
         try {
             if (file.exists()) {
-                fos = new FileOutputStream(file, append);
-                oos = new AppendableObjectOutputStream(fos);
-            } else {
-                fos = new FileOutputStream(file);
-                oos = new ObjectOutputStream(fos);
+                oos = new AppendableObjectOutputStream (new FileOutputStream (filename, append));
+            }
+            else {
+                oos = new ObjectOutputStream (new FileOutputStream (filename));
             }
             switch (userTypeCombo.getValue()) {
-                case "Student": {
-                    int userID = 1000000;
-                    Student s = (new Student(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
-
-                    oos.writeObject(s);
-                    break;
-                }
-                case "Institution": {
-                    Random r = new Random();
-                    int userID = 2000000;
-                    int random = r.nextInt(100);
-                    String rank = "";
-//                    rank += random;
-                    Institution s = (new Institution(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID, rank));
-
-                    oos.writeObject(s);
-
-                    break;
-                }
-                case "Teacher": {
-                    int userID = 3000000;
-                    teacherArr.add(new Teacher(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
-                    for (Teacher s : teacherArr) {
-                        oos.writeObject(s);
+                case "Student":
+                    {
+                        int userID = 1000000;
+                        studentArr.add(new Student(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
+                        for (Student s:studentArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
                     }
-                    break;
-                }
-                case "Registrar Office": {
-                    int userID = 5000000;
-                    registrarArr.add(new RegistrarOffice(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
-                    for (RegistrarOffice s : registrarArr) {
-                        oos.writeObject(s);
+                case "Institution":
+                    {     
+                        Random r = new Random();
+                        int userID = 2000000;
+                        int random = r.nextInt(100);
+                        String rank = "";
+                        rank += random;
+                        institutionArr.add(new Institution(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID, rank));
+                        for (Institution s:institutionArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
                     }
-                    break;
-                }
-                case "Head Of Examination": {
-                    int userID = 4000000;
-                    headOfExaminationArr.add(new HeadOfExamination(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
-                    for (HeadOfExamination s : headOfExaminationArr) {
-                        oos.writeObject(s);
+                case "Teacher":
+                    {     
+                        int userID = 3000000;
+                        teacherArr.add(new Teacher(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
+                        for (Teacher s:teacherArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
                     }
-                    break;
-                }
-                case "Office Administrator": {
-                    int userID = 6000000;
-                    adminArr.add(new OfficeAdministrator(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
-                    for (OfficeAdministrator s : adminArr) {
-                        oos.writeObject(s);
+                case "Registrar Office":
+                    {
+                        int userID = 5000000;
+                        registrarArr.add(new RegistrarOffice(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
+                        for (RegistrarOffice s:registrarArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
                     }
-                    break;
-                }
-                case "Education Minister": {
-                    int userID = 7000000;
-                    emArr.add(new EducationMinister(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
-                    for (EducationMinister s : emArr) {
-                        oos.writeObject(s);
+                case "Head Of Examination":
+                    {
+                        int userID = 4000000;
+                        headOfExaminationArr.add(new HeadOfExamination(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
+                        for (HeadOfExamination s:headOfExaminationArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
                     }
-                    break;
-                }
-                case "Scholarship Office": {
-                    int userID = 8000000;
-                    scholarshipArr.add(new ScholarshipOffice(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
-                    for (ScholarshipOffice s : scholarshipArr) {
-                        oos.writeObject(s);
+                case "Office Administrator":
+                    {
+                        int userID = 6000000;
+                        adminArr.add(new OfficeAdministrator(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
+                        for (OfficeAdministrator s:adminArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
                     }
-                    break;
-                }
+                case "Education Minister":
+                    {
+                        int userID = 7000000;
+                        emArr.add(new EducationMinister(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
+                        for (EducationMinister s:emArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
+                    }
+                case "Scholarship Office":
+                    {
+                        int userID = 8000000;
+                        scholarshipArr.add(new ScholarshipOffice(nameTextField.getText(), emailTextField.getText(), passwordTextField.getText(), userID));
+                        for (ScholarshipOffice s:scholarshipArr){
+                            oos.writeObject(s);
+                        }       
+                        break;
+                    }
             }
-        } catch (Exception e) {
-        } finally {
-            try {
-                if (oos != null) {
-                    oos.close();
-                }
-            } catch (Exception e) {
-            }
+            oos.flush();
+        }
+        catch (Exception e){ }
+        finally{
+            try{
+                if (oos != null) oos.close ();
+            }catch (Exception e){ }
         }
         Parent loginHomeParent = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene loginHomeScene = new Scene(loginHomeParent);
-        Stage loginHomeStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage loginHomeStage = (Stage)((Node)event.getSource()).getScene().getWindow();
         loginHomeStage.setScene(loginHomeScene);
         loginHomeStage.setTitle("Dhaka Education Board");
         loginHomeStage.show();
     }
-
+    
     private static class AppendableObjectOutputStream extends ObjectOutputStream {
-
-        public AppendableObjectOutputStream(OutputStream oos) throws IOException {
+          public AppendableObjectOutputStream(OutputStream oos) throws IOException {
             super(oos);
-        }
+          }
     }
 }
