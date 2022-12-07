@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="432.0" prefWidth="730.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="dhakaeducationboard.ViewRegCardController">
+<AnchorPane id="AnchorPane" prefHeight="432.0" prefWidth="730.0" style="-fx-background-color: #8EA8C3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.ViewRegCardController">
    <children>
       <Label layoutX="252.0" layoutY="63.0" prefHeight="39.0" prefWidth="226.0" text="Registration Card">
          <font>

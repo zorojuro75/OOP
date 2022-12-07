@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="268.0" prefWidth="498.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="dhakaeducationboard.StudentPublicExamOption1Controller">
+<AnchorPane id="AnchorPane" prefHeight="268.0" prefWidth="498.0" style="-fx-background-color: #8EA8C3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.StudentPublicExamOption1Controller">
    <children>
       <Label layoutX="163.0" layoutY="75.0" text="Select Exam Option">
          <font>

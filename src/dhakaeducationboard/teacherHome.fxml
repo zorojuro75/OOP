@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.TeacherHomeController">
+<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="901.0" style="-fx-background-color: #8EA8C3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.TeacherHomeController">
    <children>
       <Label layoutX="310.0" layoutY="99.0" text="Teacher Dashboard">
          <font>

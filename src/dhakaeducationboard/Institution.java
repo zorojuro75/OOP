@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 import javafx.beans.property.SimpleStringProperty;
 
 /**
@@ -20,14 +21,28 @@ import javafx.beans.property.SimpleStringProperty;
  */
 public class Institution extends User implements Serializable{
     private String rank;
+    private String EIIN;
+    private ArrayList<Campus> campus;
 
-    public Institution(String rank) {
-        this.rank = rank;
-    }
 
-    public Institution(String rank, String userName, String userid, String email, String password) {
+    public Institution(String rank, String userName, String userid, String email, String password, String EIIN) {
         super(userName, userid, email, password);
         this.rank = rank;
+        this.EIIN = EIIN;
+        campus.add(new Campus());
+    }
+    public void setCampus(){
+        this.campus.add(new Campus());
+    }
+    public ArrayList<Campus> getCampus(){
+        return campus;
+    } 
+    public String getEIIN() {
+        return EIIN;
+    }
+
+    public void setEIIN(String EIIN) {
+        this.EIIN = EIIN;
     }
 
     public String getRank() {

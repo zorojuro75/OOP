@@ -12,12 +12,14 @@ import java.io.Serializable;
  * @author willi
  */
 public class Student extends User implements Serializable {
-
+    Address address;
+    Institution institute;
     public Student() {
     }
 
     public Student(String userName, String userid, String email, String password) {
         super(userName, userid, email, password);
+        this.address = new Address();
     }
     public String getUserName() {
         return userName;
@@ -49,5 +51,9 @@ public class Student extends User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Address getAddress() {
+        return address;
     }
 }

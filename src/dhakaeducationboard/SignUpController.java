@@ -110,7 +110,8 @@ public class SignUpController implements Initializable {
                         nameTextField.getText(),
                         id = Integer.toString(R.nextInt(10000)),
                         emailTextField.getText(),
-                        passwordTextField.getText()    
+                        passwordTextField.getText(),
+                        Integer.toString(R.nextInt(10000))
                 );
                 oos.writeObject(s);
 
