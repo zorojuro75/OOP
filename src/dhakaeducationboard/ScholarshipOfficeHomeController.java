@@ -80,5 +80,9 @@ public class ScholarshipOfficeHomeController implements Initializable {
     @FXML
     private void logout(MouseEvent event) {
     }
+
+    void init(String userName, String userid) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

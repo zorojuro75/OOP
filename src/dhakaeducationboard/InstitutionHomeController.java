@@ -38,8 +38,9 @@ public class InstitutionHomeController implements Initializable {
         // TODO
     }    
 
-    public void init(String userId) {
-        nameLabel.setText(userId);
+    public void init(String name, String id){
+        nameLabel.setText("Name : "+ name);
+        idLabel.setText("ID : "+ id);
     }
     
     @FXML

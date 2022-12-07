@@ -11,28 +11,29 @@ import java.io.Serializable;
  *
  * @author willi
  */
-public class RegistrarOffice implements Serializable{
-    protected String name;
-    protected String email;
-    protected String password;
-    protected int userID;
-
-    public RegistrarOffice(String name, String email, String password, int userID) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.userID = userID;
-    }
+public class RegistrarOffice extends User implements Serializable{
 
     public RegistrarOffice() {
     }
 
-    public String getName() {
-        return name;
+    public RegistrarOffice(String userName, String userid, String email, String password) {
+        super(userName, userid, email, password);
+    }
+    
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
 
     public String getEmail() {
@@ -49,13 +50,5 @@ public class RegistrarOffice implements Serializable{
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
+    }    
 }

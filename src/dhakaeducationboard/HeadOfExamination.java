@@ -11,52 +11,14 @@ import java.io.Serializable;
  *
  * @author willi
  */
-public class HeadOfExamination implements Serializable {
-    protected String name;
-    protected String email;
-    protected String password;
-    protected int userID;
-
-    public HeadOfExamination(String name, String email, String password, int userID) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.userID = userID;
-    }
+public class HeadOfExamination extends User implements Serializable {
 
     public HeadOfExamination() {
     }
 
-    public String getName() {
-        return name;
+    public HeadOfExamination(String userName, String userid, String email, String password) {
+        super(userName, userid, email, password);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public int getUserID() {
-        return userID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
-    }
+   
     
 }

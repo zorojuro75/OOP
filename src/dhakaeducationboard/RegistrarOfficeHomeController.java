@@ -5,12 +5,18 @@
  */
 package dhakaeducationboard;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -37,7 +43,19 @@ public class RegistrarOfficeHomeController implements Initializable {
     }
 
     @FXML
-    private void registerInstitution(MouseEvent event) {
+    private void registerInstitution(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("viewInstiReg.fxml"));
+        Parent registrationFormParent = loader.load();
+        Scene registrationFormScene = new Scene(registrationFormParent);
+
+        LoginController controller = loader.getController();
+//        controller.init();
+
+        Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        registrationFormStage.setScene(registrationFormScene);
+        registrationFormStage.setTitle("Dhaka Education Board");
+        registrationFormStage.show();
     }
 
     @FXML
@@ -66,6 +84,10 @@ public class RegistrarOfficeHomeController implements Initializable {
 
     @FXML
     private void logout(MouseEvent event) {
+    }
+
+    void init(String userName, String userid) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

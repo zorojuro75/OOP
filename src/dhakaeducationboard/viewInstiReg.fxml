@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="535.0" prefWidth="786.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="dhakaeducationboard.ViewInstiRegController">
+   <children>
+      <Label layoutX="201.0" layoutY="73.0" prefHeight="49.0" prefWidth="385.0" text="Applications for Institution Registration">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <TableView layoutX="73.0" layoutY="146.0" onMouseClicked="#Confirm" prefHeight="302.0" prefWidth="642.0">
+        <columns>
+          <TableColumn prefWidth="243.0" text="Institution Name" />
+          <TableColumn prefWidth="198.0" text="Location" />
+            <TableColumn prefWidth="200.0" text="Confirmation" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

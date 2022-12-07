@@ -89,7 +89,8 @@ public class SignUpController implements Initializable {
                 } catch (IOException ex) {
                 }
             }
-        } else if (str.equals("Institution")) {
+        }
+        else if (str.equals("Institution")) {
             File f = null;
             FileOutputStream fos = null;
             ObjectOutputStream oos = null;
@@ -103,10 +104,214 @@ public class SignUpController implements Initializable {
                     fos = new FileOutputStream(f);
                     oos = new ObjectOutputStream(fos);
                 }
-                Student s;
-                s = new Student(
+                Institution s;
+                s = new Institution(
+                        Integer.toString(R.nextInt(100)),
                         nameTextField.getText(),
-                        Integer.toString(R.nextInt(10000)),
+                        id = Integer.toString(R.nextInt(10000)),
+                        emailTextField.getText(),
+                        passwordTextField.getText()    
+                );
+                oos.writeObject(s);
+
+            } catch (IOException ex) {
+            } finally {
+                try {
+                    if (oos != null) {
+                        oos.close();
+                    }
+                } catch (IOException ex) {
+                }
+            }
+        }
+        else if (str.equals("Registrar Office")) {
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try {
+                f = new File(str+".bin");
+                if (f.exists()) {
+                    fos = new FileOutputStream(f, true);
+                    oos = new AppendableObjectOutputStream(fos);
+                } else {
+                    fos = new FileOutputStream(f);
+                    oos = new ObjectOutputStream(fos);
+                }
+                RegistrarOffice s;
+                s = new RegistrarOffice(
+                        nameTextField.getText(),
+                        id = Integer.toString(R.nextInt(10000)),
+                        emailTextField.getText(),
+                        passwordTextField.getText()
+                        
+                );
+                oos.writeObject(s);
+
+            } catch (IOException ex) {
+            } finally {
+                try {
+                    if (oos != null) {
+                        oos.close();
+                    }
+                } catch (IOException ex) {
+                }
+            }
+        }
+        else if (str.equals("Teacher")) {
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try {
+                f = new File(str+".bin");
+                if (f.exists()) {
+                    fos = new FileOutputStream(f, true);
+                    oos = new AppendableObjectOutputStream(fos);
+                } else {
+                    fos = new FileOutputStream(f);
+                    oos = new ObjectOutputStream(fos);
+                }
+                Teacher s;
+                s = new Teacher(
+                        nameTextField.getText(),
+                        id = Integer.toString(R.nextInt(10000)),
+                        emailTextField.getText(),
+                        passwordTextField.getText()
+                        
+                );
+                oos.writeObject(s);
+
+            } catch (IOException ex) {
+            } finally {
+                try {
+                    if (oos != null) {
+                        oos.close();
+                    }
+                } catch (IOException ex) {
+                }
+            }
+        }
+        else if (str.equals("Scholarship Office")) {
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try {
+                f = new File(str+".bin");
+                if (f.exists()) {
+                    fos = new FileOutputStream(f, true);
+                    oos = new AppendableObjectOutputStream(fos);
+                } else {
+                    fos = new FileOutputStream(f);
+                    oos = new ObjectOutputStream(fos);
+                }
+                ScholarshipOffice s;
+                s = new ScholarshipOffice(
+                        nameTextField.getText(),
+                        id = Integer.toString(R.nextInt(10000)),
+                        emailTextField.getText(),
+                        passwordTextField.getText()
+                        
+                );
+                oos.writeObject(s);
+
+            } catch (IOException ex) {
+            } finally {
+                try {
+                    if (oos != null) {
+                        oos.close();
+                    }
+                } catch (IOException ex) {
+                }
+            }
+        }
+        else if (str.equals("Education Minister")) {
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try {
+                f = new File(str+".bin");
+                if (f.exists()) {
+                    fos = new FileOutputStream(f, true);
+                    oos = new AppendableObjectOutputStream(fos);
+                } else {
+                    fos = new FileOutputStream(f);
+                    oos = new ObjectOutputStream(fos);
+                }
+                EducationMinister s;
+                s = new EducationMinister(
+                        nameTextField.getText(),
+                        id = Integer.toString(R.nextInt(10000)),
+                        emailTextField.getText(),
+                        passwordTextField.getText()
+                        
+                );
+                oos.writeObject(s);
+
+            } catch (IOException ex) {
+            } finally {
+                try {
+                    if (oos != null) {
+                        oos.close();
+                    }
+                } catch (IOException ex) {
+                }
+            }
+        }
+        else if (str.equals("Head Of Examination")) {
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try {
+                f = new File(str+".bin");
+                if (f.exists()) {
+                    fos = new FileOutputStream(f, true);
+                    oos = new AppendableObjectOutputStream(fos);
+                } else {
+                    fos = new FileOutputStream(f);
+                    oos = new ObjectOutputStream(fos);
+                }
+                HeadOfExamination s;
+                s = new HeadOfExamination(
+                        nameTextField.getText(),
+                        id = Integer.toString(R.nextInt(10000)),
+                        emailTextField.getText(),
+                        passwordTextField.getText()
+                        
+                );
+                oos.writeObject(s);
+
+            } catch (IOException ex) {
+            } finally {
+                try {
+                    if (oos != null) {
+                        oos.close();
+                    }
+                } catch (IOException ex) {
+                }
+            }
+        }
+        else if (str.equals("Office Administrator")) {
+            File f = null;
+            FileOutputStream fos = null;
+            ObjectOutputStream oos = null;
+
+            try {
+                f = new File(str+".bin");
+                if (f.exists()) {
+                    fos = new FileOutputStream(f, true);
+                    oos = new AppendableObjectOutputStream(fos);
+                } else {
+                    fos = new FileOutputStream(f);
+                    oos = new ObjectOutputStream(fos);
+                }
+                OfficeAdministrator s;
+                s = new OfficeAdministrator(
+                        nameTextField.getText(),
+                        id = Integer.toString(R.nextInt(10000)),
                         emailTextField.getText(),
                         passwordTextField.getText()
                         

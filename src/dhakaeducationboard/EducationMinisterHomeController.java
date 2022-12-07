@@ -67,5 +67,9 @@ public class EducationMinisterHomeController implements Initializable {
     @FXML
     private void viewRankings(MouseEvent event) {
     }
+
+    void init(String userName, String userid) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }

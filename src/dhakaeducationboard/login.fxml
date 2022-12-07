@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,19 +19,19 @@
             <Font size="22.0" />
          </font>
       </Label>
-      <Label layoutX="277.0" layoutY="270.0" prefHeight="25.0" prefWidth="149.0" text="User ID               :">
+      <Label layoutX="277.0" layoutY="292.0" prefHeight="25.0" prefWidth="149.0" text="User ID               :">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="userIdTextField" layoutX="476.0" layoutY="271.0" />
-      <Label layoutX="277.0" layoutY="303.0" prefHeight="28.0" prefWidth="149.0" text="Password           :">
+      <TextField fx:id="userIdTextField" layoutX="476.0" layoutY="294.0" />
+      <Label layoutX="277.0" layoutY="328.0" prefHeight="28.0" prefWidth="149.0" text="Password           :">
          <font>
             <Font size="19.0" />
          </font>
       </Label>
-      <TextField fx:id="passwordTextField" layoutX="476.0" layoutY="304.0" />
-      <Button layoutX="369.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#loginOnClick" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #23395B;" text="Login" textFill="#20ff36">
+      <TextField fx:id="passwordTextField" layoutX="476.0" layoutY="330.0" />
+      <Button layoutX="370.0" layoutY="395.0" mnemonicParsing="false" onMouseClicked="#loginOnClick" prefHeight="40.0" prefWidth="164.0" style="-fx-background-color: #23395B;" text="Login" textFill="#20ff36">
          <font>
             <Font size="19.0" />
          </font>
@@ -45,5 +46,11 @@
             <Font size="15.0" />
          </font>
       </Button>
+      <ComboBox fx:id="user" layoutX="476.0" layoutY="260.0" prefHeight="25.0" prefWidth="150.0" />
+      <Label layoutX="277.0" layoutY="260.0" prefHeight="25.0" prefWidth="149.0" text="User Type          : ">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
