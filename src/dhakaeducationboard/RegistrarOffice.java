@@ -80,7 +80,19 @@ public class RegistrarOffice extends User implements Serializable{
     }
 
 
-    public void prepareRegistrationCards(MouseEvent event) {
+    public void prepareRegistrationCards(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("prepareRegScene.fxml"));
+        Parent registrationFormParent = loader.load();
+        Scene registrationFormScene = new Scene(registrationFormParent);
+
+//        LoginController controller = loader.getController();
+//        controller.init();
+
+        Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        registrationFormStage.setScene(registrationFormScene);
+        registrationFormStage.setTitle("Dhaka Education Board");
+        registrationFormStage.show();
         
     }
 

@@ -29,7 +29,7 @@ public class ScholarshipOfficeHomeController implements Initializable {
     private Label nameLabel;
     @FXML
     private Label idLabel;
-
+    private ScholarshipOffice so= new ScholarshipOffice();
     /**
      * Initializes the controller class.
      */
@@ -38,52 +38,46 @@ public class ScholarshipOfficeHomeController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void viewScholarshipStudents(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewStudentInformation(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewScholarStudentResults(MouseEvent event) {
-    }
-
-    @FXML
-    private void scholarshipRequests(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewRankings(MouseEvent event) throws IOException {
-        Parent studentPublicExamOption1Parent = FXMLLoader.load(getClass().getResource("viewRankings.fxml"));
-        Scene studentPublicExamOption1Scene = new Scene(studentPublicExamOption1Parent);
-        Stage studentPublicExamOption1Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        studentPublicExamOption1Stage.setScene(studentPublicExamOption1Scene);
-        studentPublicExamOption1Stage.setTitle("Dhaka Education Board");
-        studentPublicExamOption1Stage.show();
-    }
-
-    @FXML
-    private void viewInstituteScholarshipBudgets(MouseEvent event) {
-    }
-
-    @FXML
-    private void scholarshipBudgetRequests(MouseEvent event) {
-        
-    }
-
-    @FXML
-    private void changeScholarshipStatus(MouseEvent event) {
-    }
-
-    @FXML
-    private void logout(MouseEvent event) {
-    }
-
     public void init(String name, String id){
         nameLabel.setText("Name : "+ name);
         idLabel.setText("ID : "+ id);
+    }
+
+    @FXML
+    private void viewScholarshipStudentsOnclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewStudentInformationOnclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewScholarStudentResultsOnclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void scholarshipRequestsOnclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewRankingsOnclick(MouseEvent event) throws IOException {
+        so.viewRankings(event);
+    }
+
+    @FXML
+    private void viewInstituteScholarshipBudgetsOnclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void scholarshipBudgetRequestsOnclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void changeScholarshipStatusOnclick(MouseEvent event) {
+    }
+
+    @FXML
+    private void logoutOnclick(MouseEvent event) {
     }
     
 }

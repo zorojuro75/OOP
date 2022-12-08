@@ -3,7 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/Student.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/CheckRegistrationApplicationsController.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/RegistrarOffice.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/RegistrationCard.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/PrepareRegSceneController.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/RegistrarOfficeHomeController.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/prepareRegScene.fxml</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/RegistrationFormController.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/LoginController.java</file>
         </group>
     </open-files>
 </project-private>

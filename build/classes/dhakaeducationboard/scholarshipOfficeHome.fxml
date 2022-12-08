@@ -22,46 +22,46 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewScholarshipStudents" prefHeight="61.0" prefWidth="267.0" text="Scholarship Students">
+      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewScholarshipStudentsOnclick" prefHeight="61.0" prefWidth="267.0" text="Scholarship Students">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#viewStudentInformation" prefHeight="61.0" prefWidth="267.0" text="Student Information">
+      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#viewStudentInformationOnclick" prefHeight="61.0" prefWidth="267.0" text="Student Information">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#viewScholarStudentResults" prefHeight="61.0" prefWidth="267.0" text="Scholarship Student Results">
+      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#viewScholarStudentResultsOnclick" prefHeight="61.0" prefWidth="267.0" text="Scholarship Student Results">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#scholarshipRequests" prefHeight="61.0" prefWidth="267.0" text="Scholarship Requests">
+      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#scholarshipRequestsOnclick" prefHeight="61.0" prefWidth="267.0" text="Scholarship Requests">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewRankings" prefHeight="61.0" prefWidth="267.0" text="Institute Rankings">
+      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewRankingsOnclick" prefHeight="61.0" prefWidth="267.0" text="Institute Rankings">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#viewInstituteScholarshipBudgets" prefHeight="61.0" prefWidth="267.0" text="Institute &amp; Scholarship Budgets">
+      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#viewInstituteScholarshipBudgetsOnclick" prefHeight="61.0" prefWidth="267.0" text="Institute &amp; Scholarship Budgets">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#scholarshipBudgetRequests" prefHeight="61.0" prefWidth="267.0" text="Scholarship Budget Requests">
+      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#scholarshipBudgetRequestsOnclick" prefHeight="61.0" prefWidth="267.0" text="Scholarship Budget Requests">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#changeScholarshipStatus" prefHeight="61.0" prefWidth="267.0" text="Change Scholarship Status">
+      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#changeScholarshipStatusOnclick" prefHeight="61.0" prefWidth="267.0" text="Change Scholarship Status">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
+      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logoutOnclick" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
    </children>
 </AnchorPane>

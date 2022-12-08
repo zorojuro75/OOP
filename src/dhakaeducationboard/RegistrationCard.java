@@ -19,6 +19,7 @@ public class RegistrationCard implements Serializable {
     private String sessionName;
 
     public RegistrationCard() {
+        
     }
 
     public RegistrationCard(int regID, int rollNumber, String studentName, String institutionName, String sessionName) {

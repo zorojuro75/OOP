@@ -27,6 +27,7 @@ public class Student extends User implements Serializable {
     public Student(String userName, String userid, String email, String password, Address a) {
         super(userName, userid, email, password);
         this.address = a;
+        regCard= new RegistrationCard();
     }
     public String getUserName() {
         return userName;

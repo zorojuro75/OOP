@@ -7,44 +7,40 @@ package dhakaeducationboard;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Stage;
 
 /**
  * FXML Controller class
  *
  * @author anikb
  */
-public class CheckRegistrationApplicationsController implements Initializable {
+public class PrepareRegSceneController implements Initializable {
 
     @FXML
-    private TableView<RegistrationForm> applicationTableView;
+    private ComboBox<String> examTypeCombo;
+    @FXML
+    private ComboBox<String> institutionNameCombo;
+    @FXML
+    private TableView<RegistrationForm> regCardTableView;
     @FXML
     private TableColumn<RegistrationForm, String> name;
     @FXML
-    private TableColumn<RegistrationForm, String> rollnumber;
+    private TableColumn<RegistrationForm, String> rollNumber;
     @FXML
-    private TableColumn<RegistrationForm, String> institute;
+    private TableColumn<RegistrationForm, String> institutionName;
     @FXML
     private TableColumn<RegistrationForm, String> session;
 
@@ -53,28 +49,56 @@ public class CheckRegistrationApplicationsController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
-    }
-
-    public void init(String exam, String institutionName) {
-        name.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("name"));
-        rollnumber.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("rollNumber"));
-        institute.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("instituteName"));
-        session.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("session"));
-        applicationTableView.setItems(getApplications(exam, institutionName));
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        examTypeCombo.getItems().addAll("HSC", "SSC");
+        try {
+            f = new File("Institution.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            Institution p;
+            try {
+                while (true) {
+                    p = (Institution) ois.readObject();
+                    institutionNameCombo.getItems().add(p.getUserName());
+                }
+            }//end of nested try
+            catch (Exception e) {
+                //
+            }//nested catch             
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+        }
     }
 
     @FXML
-    private void sendApplications(MouseEvent event) {
+    private void viewRegFormsOnClick(MouseEvent event) {
+        name.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("name"));
+        rollNumber.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("rollNumber"));
+        institutionName.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("instituteName"));
+        session.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("session"));
+        regCardTableView.setItems(getApplications(examTypeCombo.getValue(), institutionNameCombo.getValue()));
+        regCardTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
-    
-     public ObservableList<RegistrationForm> getApplications(String exam, String institutionName) {
+
+    @FXML
+    private void createRegCardsOnClick(MouseEvent event) {
+    }
+
+    public ObservableList<RegistrationForm> getApplications(String exam, String institutionName) {
         ObservableList<RegistrationForm> registrationForm = FXCollections.observableArrayList();
         File f = null;
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
-            f = new File(institutionName+exam+".bin");
+            f = new File(institutionName + exam + ".bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             RegistrationForm p;
@@ -96,5 +120,4 @@ public class CheckRegistrationApplicationsController implements Initializable {
         }
         return registrationForm;
     }
-
 }

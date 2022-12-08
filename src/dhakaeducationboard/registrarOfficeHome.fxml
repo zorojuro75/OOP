@@ -22,46 +22,46 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#confirmEnrollRequests" prefHeight="61.0" prefWidth="267.0" text="Enrollment Requests">
+      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#confirmEnrollRequestsOnClick" prefHeight="61.0" prefWidth="267.0" text="Enrollment Requests">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#registerInstitution" prefHeight="61.0" prefWidth="267.0" text="Register Institution">
+      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#registerInstitutionOnClick" prefHeight="61.0" prefWidth="267.0" text="Register Institution">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#prepareRegistrationCards" prefHeight="61.0" prefWidth="267.0" text="Registration Cards Of Students">
+      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#prepareRegistrationCardsOnClick" prefHeight="61.0" prefWidth="267.0" text="Registration Cards Of Students">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#prepareAdmitCards" prefHeight="61.0" prefWidth="267.0" text="Admit Cards Of Students">
+      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#prepareAdmitCardsOnClick" prefHeight="61.0" prefWidth="267.0" text="Admit Cards Of Students">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewStudentInformation" prefHeight="61.0" prefWidth="267.0" text="Student Information">
+      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewStudentInformationOnClick" prefHeight="61.0" prefWidth="267.0" text="Student Information">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#updateCorrectionRequests" prefHeight="61.0" prefWidth="267.0" text="Correction Requests">
+      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#updateCorrectionRequestsOnClick" prefHeight="61.0" prefWidth="267.0" text="Correction Requests">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#handleStudentMigrations" prefHeight="61.0" prefWidth="267.0" text="Student Migrations">
+      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#handleStudentMigrationsOnClick" prefHeight="61.0" prefWidth="267.0" text="Student Migrations">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#requestBillChange" prefHeight="61.0" prefWidth="267.0" text="Request For Registration Bill Change">
+      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#requestBillChangeOnClick" prefHeight="61.0" prefWidth="267.0" text="Request For Registration Bill Change">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
+      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logoutOnClick" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
    </children>
 </AnchorPane>

@@ -29,7 +29,7 @@ public class RegistrarOfficeHomeController implements Initializable {
     private Label nameLabel;
     @FXML
     private Label idLabel;
-
+    private RegistrarOffice R = new RegistrarOffice();
     /**
      * Initializes the controller class.
      */
@@ -43,6 +43,44 @@ public class RegistrarOfficeHomeController implements Initializable {
     public void init(String name, String id){
         nameLabel.setText("Name : "+ name);
         idLabel.setText("ID : "+ id);
+    }
+
+    @FXML
+    private void confirmEnrollRequestsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void registerInstitutionOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void prepareRegistrationCardsOnClick(MouseEvent event) throws IOException {
+        R.prepareRegistrationCards(event);
+        
+    }
+
+    @FXML
+    private void prepareAdmitCardsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewStudentInformationOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void updateCorrectionRequestsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void handleStudentMigrationsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void requestBillChangeOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void logoutOnClick(MouseEvent event) {
     }
     
 }
