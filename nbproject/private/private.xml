@@ -5,6 +5,8 @@
         <group>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/InstitutionHomeController.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/RegistrarOffice.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/HeadOfExaminationHomeController.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/headOfExam/ExamSchedule.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/ExaminerApplicationFormController.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/RegistrarOfficeHomeController.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/ViewRegCardController.java</file>
@@ -15,6 +17,7 @@
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/PrepareRegSceneController.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/Student.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/EducationMinister.java</file>
+            <file>file:/D:/Java/DhakaEducationBoard/src/headOfExam/ExamScheduleController.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/Teacher.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/RegistrationForm.java</file>
             <file>file:/D:/Java/DhakaEducationBoard/src/dhakaeducationboard/examinerApplicationForm.fxml</file>

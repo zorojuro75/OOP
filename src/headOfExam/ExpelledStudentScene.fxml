@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="headOfExam.ExpelledStudentSceneController">
+   <children>
+      <Label alignment="CENTER" layoutX="292.0" layoutY="44.0" prefHeight="40.0" prefWidth="330.0" text="Expelled Student List">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableview" layoutX="92.0" layoutY="118.0" prefHeight="489.0" prefWidth="784.0">
+        <columns>
+          <TableColumn fx:id="studentid" prefWidth="126.0" text="Student ID" />
+          <TableColumn fx:id="name" prefWidth="139.0" text="Name" />
+            <TableColumn fx:id="examName" prefWidth="139.0" text="EXAM Name" />
+            <TableColumn fx:id="subjectCode" prefWidth="139.0" text="Subject Code" />
+            <TableColumn fx:id="subjectTitle" prefWidth="240.0" text="Subject Title " />
+        </columns>
+      </TableView>
+      <Button layoutX="767.0" layoutY="19.0" mnemonicParsing="false" onMouseClicked="#logOutOnClick" prefHeight="31.0" prefWidth="95.0" text="LogOut" />
+      <Button layoutX="92.0" layoutY="29.0" mnemonicParsing="false" onMouseClicked="#homeOnClick" prefHeight="31.0" prefWidth="95.0" text="Home" />
+   </children>
+</AnchorPane>

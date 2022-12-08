@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="901.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="headOfExam.ExamScheduleController">
+   <children>
+      <TableView fx:id="tableview" layoutX="123.0" layoutY="304.0" prefHeight="305.0" prefWidth="643.0">
+        <columns>
+          <TableColumn fx:id="Tname" prefWidth="157.0" text="Exam Name" />
+          <TableColumn fx:id="Tcode" minWidth="2.0" prefWidth="163.0" text="Subject  Code:" />
+            <TableColumn fx:id="TexamDate" minWidth="2.0" prefWidth="164.0" text="Exam Date" />
+            <TableColumn fx:id="Ttime" minWidth="2.0" prefWidth="157.0" text="Exam Time" />
+        </columns>
+      </TableView>
+      <Pane layoutX="102.0" layoutY="88.0" prefHeight="200.0" prefWidth="678.0">
+         <children>
+            <Label alignment="CENTER" layoutX="236.0" layoutY="13.0" prefHeight="31.0" prefWidth="236.0" text="Finalize Exam Schedule">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="29.0" layoutY="57.0" prefHeight="25.0" prefWidth="96.0" text="Exam Name" />
+            <Label alignment="CENTER" layoutX="29.0" layoutY="101.0" prefHeight="25.0" prefWidth="96.0" text="Exam Date" />
+            <Label alignment="CENTER" layoutX="362.0" layoutY="57.0" prefHeight="25.0" prefWidth="110.0" text="Subject  Code:" />
+            <ComboBox fx:id="examTitleComboBox" layoutX="168.0" layoutY="57.0" prefWidth="150.0" promptText="Exam Title" />
+            <DatePicker fx:id="datePicker" layoutX="169.0" layoutY="101.0" prefHeight="25.0" prefWidth="149.0" promptText="Date Pick" />
+            <Label alignment="CENTER" layoutX="378.0" layoutY="97.0" prefHeight="25.0" prefWidth="88.0" text="Exam Time" />
+            <TextField fx:id="examTime" layoutX="504.0" layoutY="97.0" promptText="  Time" />
+            <Button layoutX="179.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#addToTableOnClick" prefHeight="25.0" prefWidth="175.0" text="Add to Database" />
+            <Button layoutX="403.0" layoutY="150.0" mnemonicParsing="false" onMouseClicked="#saveOnClick" prefHeight="25.0" prefWidth="175.0" text="Save " />
+            <ComboBox fx:id="subjectCode" layoutX="503.0" layoutY="57.0" prefWidth="150.0" promptText="Subject Code" />
+         </children>
+      </Pane>
+      <Button layoutX="76.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#homeOnClick" prefHeight="31.0" prefWidth="119.0" text="Home " />
+      <Button layoutX="712.0" layoutY="26.0" mnemonicParsing="false" onMouseClicked="#LogOutOnClick" prefHeight="31.0" prefWidth="119.0" text="LogOut" />
+   </children>
+</AnchorPane>
