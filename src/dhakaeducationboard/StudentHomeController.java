@@ -29,7 +29,7 @@ public class StudentHomeController implements Initializable {
     private Label nameLabel;
     @FXML
     private Label idLabel;
-
+    Student s = new Student();
     /**
      * Initializes the controller class.
      */
@@ -43,51 +43,48 @@ public class StudentHomeController implements Initializable {
     }
 
     @FXML
-    private void logout(MouseEvent event) throws IOException {
-        Parent loginParent = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Scene loginScene = new Scene(loginParent);
-        Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        loginStage.setScene(loginScene);
-        loginStage.setTitle("Dhaka Education Board");
-        loginStage.show();
+    private void viewBoardExamResultsOnClick(MouseEvent event) {
+        
     }
 
     @FXML
-    private void viewBoardExamResults(MouseEvent event) {
+    private void applyRegistrationOnClck(MouseEvent event) throws IOException {
+        s.applyRegistration(event);
     }
 
     @FXML
-    private void applyRegistration(MouseEvent event) throws IOException {
-        Parent studentPublicExamOption1Parent = FXMLLoader.load(getClass().getResource("studentPublicExamOption1.fxml"));
-        Scene studentPublicExamOption1Scene = new Scene(studentPublicExamOption1Parent);
-        Stage studentPublicExamOption1Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        studentPublicExamOption1Stage.setScene(studentPublicExamOption1Scene);
-        studentPublicExamOption1Stage.setTitle("Dhaka Education Board");
-        studentPublicExamOption1Stage.show();
+    private void applyRecheckingOnClick(MouseEvent event) {
+        s.applyRechecking(event);
     }
 
     @FXML
-    private void applyRechecking(MouseEvent event) {
+    private void viewSeatPlanOnClick(MouseEvent event) {
+        s.viewSeatPlan(event);
     }
 
     @FXML
-    private void viewSeatPlan(MouseEvent event) {
+    private void editPersonalInformationOnClick(MouseEvent event) {
+        s.editPersonalInformation(event);
     }
 
     @FXML
-    private void editPersonalInformation(MouseEvent event) {
+    private void applyCollegeOnClick(MouseEvent event) {
+        s.applyCollege(event);
     }
 
     @FXML
-    private void applyCollege(MouseEvent event) {
+    private void changeInstitutionOnClick(MouseEvent event) {
+        s.changeInstitution(event);
     }
 
     @FXML
-    private void changeInstitution(MouseEvent event) {
+    private void applyScholarshipOnClick(MouseEvent event) {
+        s.applyScholarship(event);
     }
 
     @FXML
-    private void applyScholarship(MouseEvent event) {
+    private void logoutOnclick(MouseEvent event) throws IOException {
+        s.logout(event);
     }
 
 }

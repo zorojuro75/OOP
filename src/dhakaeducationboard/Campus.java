@@ -5,20 +5,21 @@
  */
 package dhakaeducationboard;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  *
  * @author anikb
  */
-public class Campus {
-    private Address address;
+public class Campus implements Serializable{
+    Address address;
     private int campusNumber;
     private int staffNumber;
 
     public Campus() {
         Random r= new Random();
-        this.address = setAddress();
+        this.address = new Address();
         this.campusNumber = r.nextInt(5);
         this.staffNumber = r.nextInt(50);
     }
@@ -28,7 +29,7 @@ public class Campus {
     }
 
     @Override
-    public String toString() {
+    public String toString(){
         return "Campus{" + "address=" + address + ", campusNumber=" + campusNumber + ", staffNumber=" + staffNumber + '}';
     }
 }

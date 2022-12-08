@@ -5,7 +5,14 @@
  */
 package dhakaeducationboard;
 
+import java.io.IOException;
 import java.io.Serializable;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  *
@@ -68,5 +75,13 @@ public class User implements Serializable{
         }
         return false;
     } 
+    public void logout(MouseEvent event) throws IOException {
+        Parent loginParent = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene loginScene = new Scene(loginParent);
+        Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        loginStage.setScene(loginScene);
+        loginStage.setTitle("Dhaka Education Board");
+        loginStage.show();
+    }
 }
 

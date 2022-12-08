@@ -5,11 +5,13 @@
  */
 package dhakaeducationboard;
 
+import java.io.Serializable;
+
 /**
  *
  * @author anikb
  */
-public class RegistrationCard {
+public class RegistrationCard implements Serializable {
     private int regID;
     private int rollNumber;
     private String studentName;

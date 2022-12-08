@@ -97,7 +97,7 @@ public class LoginController implements Initializable {
                 }
             }
         }
-        else if (user.getValue().equals("Institution")) {
+        else if (user.getValue().equals("Institution")){
             try {
                 f = new File(user.getValue() + ".bin");
                 fis = new FileInputStream(f);
@@ -113,7 +113,7 @@ public class LoginController implements Initializable {
                             Scene registrationFormScene = new Scene(registrationFormParent);
 
                             InstitutionHomeController controller = loader.getController();
-                            controller.init(p.getUserName(), p.getUserid());
+                            controller.init(p.getUserName(), p.getUserid(), (Institution)p);
 
                             Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                             registrationFormStage.setScene(registrationFormScene);

@@ -5,6 +5,7 @@
  */
 package dhakaeducationboard;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -12,7 +13,7 @@ import java.util.Random;
  *
  * @author anikb
  */
-public class Address {
+public class Address implements Serializable{
     private String areaName;
     private int plot;
     private int road;

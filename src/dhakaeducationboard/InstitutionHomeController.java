@@ -29,7 +29,8 @@ public class InstitutionHomeController implements Initializable {
     private Label nameLabel;
     @FXML
     private Label idLabel;
-
+    private String userName="";
+    Institution I;
     /**
      * Initializes the controller class.
      */
@@ -38,51 +39,56 @@ public class InstitutionHomeController implements Initializable {
         // TODO
     }    
 
-    public void init(String name, String id){
+    public void init(String name, String id, Institution i){
+        I=i;
         nameLabel.setText("Name : "+ name);
         idLabel.setText("ID : "+ id);
     }
-    
+
     @FXML
-    private void getStudentCertificates(MouseEvent event) {
+    private void getStudentCertificatesOnClick(MouseEvent event) {
+        I.getStudentCertificates(event);
     }
 
     @FXML
-    private void publishTeacherCircular(MouseEvent event) {
+    private void publishTeacherCircularOnClick(MouseEvent event) {
+        I.publishTeacherCircular(event);
     }
 
     @FXML
-    private void publishAdmissionCircular(MouseEvent event) {
+    private void publishAdmissionCircularOnClick(MouseEvent event) {
+        I.publishAdmissionCircular(event);
     }
 
     @FXML
-    private void makeExamSeatPlans(MouseEvent event) {
+    private void makeExamSeatPlansOnClick(MouseEvent event) {
+        I.makeExamSeatPlans(event);
     }
 
     @FXML
-    private void registerBoardExam(MouseEvent event) throws IOException {
-        Parent institutionPublicExamOption1Parent = FXMLLoader.load(getClass().getResource("institutionPublicExamOption1.fxml"));
-        Scene institutionPublicExamOption1Scene = new Scene(institutionPublicExamOption1Parent);
-        Stage institutionPublicExamOption1Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        institutionPublicExamOption1Stage.setScene(institutionPublicExamOption1Scene);
-        institutionPublicExamOption1Stage.setTitle("Dhaka Education Board");
-        institutionPublicExamOption1Stage.show();
+    private void registerBoardExamOnClick(MouseEvent event) throws IOException {
+        I.registerBoardExam(event);
     }
 
     @FXML
-    private void registerInstitute(MouseEvent event) {
+    private void registerInstituteOnClick(MouseEvent event) {
+        I.registerInstitute(event);
     }
 
     @FXML
-    private void budgetExpansion(MouseEvent event) {
+    private void budgetExpansionOnClick(MouseEvent event) {
+        I.budgetExpansion(event);
     }
 
     @FXML
-    private void scholarshipRequests(MouseEvent event) {
+    private void scholarshipRequestsOnClick(MouseEvent event) {
+        I.scholarshipRequests(event);
     }
 
     @FXML
-    private void logout(MouseEvent event) {
+    private void logoutOnClick(MouseEvent event) throws IOException {
+        I.logout(event);
+        
     }
     
 }

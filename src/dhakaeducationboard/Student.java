@@ -5,7 +5,14 @@
  */
 package dhakaeducationboard;
 
+import java.io.IOException;
 import java.io.Serializable;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  *
@@ -13,13 +20,13 @@ import java.io.Serializable;
  */
 public class Student extends User implements Serializable {
     Address address;
-    Institution institute;
-    public Student() {
+    private RegistrationCard regCard;
+    public Student(){
     }
 
-    public Student(String userName, String userid, String email, String password) {
+    public Student(String userName, String userid, String email, String password, Address a) {
         super(userName, userid, email, password);
-        this.address = new Address();
+        this.address = a;
     }
     public String getUserName() {
         return userName;
@@ -52,8 +59,35 @@ public class Student extends User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+    public void applyRegistration(MouseEvent event) throws IOException {
+        Parent studentPublicExamOption1Parent = FXMLLoader.load(getClass().getResource("studentPublicExamOption1.fxml"));
+        Scene studentPublicExamOption1Scene = new Scene(studentPublicExamOption1Parent);
+        Stage studentPublicExamOption1Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        studentPublicExamOption1Stage.setScene(studentPublicExamOption1Scene);
+        studentPublicExamOption1Stage.setTitle("Dhaka Education Board");
+        studentPublicExamOption1Stage.show();
+    }
 
-    public Address getAddress() {
-        return address;
+
+    public void applyRechecking(MouseEvent event) {
+    }
+
+
+    public void viewSeatPlan(MouseEvent event) {
+    }
+
+
+    public void editPersonalInformation(MouseEvent event) {
+    }
+
+
+    public void applyCollege(MouseEvent event) {
+    }
+
+    public void changeInstitution(MouseEvent event) {
+    }
+
+
+    public void applyScholarship(MouseEvent event) {
     }
 }

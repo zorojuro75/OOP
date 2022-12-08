@@ -76,7 +76,8 @@ public class SignUpController implements Initializable {
                         nameTextField.getText(),
                         id = Integer.toString(R.nextInt(10000)),
                         emailTextField.getText(),
-                        passwordTextField.getText()   
+                        passwordTextField.getText(),
+                        (new Address())
                 );
                 oos.writeObject(s);
 
@@ -105,13 +106,15 @@ public class SignUpController implements Initializable {
                     oos = new ObjectOutputStream(fos);
                 }
                 Institution s;
+                
                 s = new Institution(
                         Integer.toString(R.nextInt(100)),
                         nameTextField.getText(),
                         id = Integer.toString(R.nextInt(10000)),
                         emailTextField.getText(),
                         passwordTextField.getText(),
-                        Integer.toString(R.nextInt(10000))
+                        Integer.toString(R.nextInt(10000)),
+                        (new Campus())
                 );
                 oos.writeObject(s);
 

@@ -27,11 +27,14 @@ public class InstitutionPublicExamOption1Controller implements Initializable {
     /**
      * Initializes the controller class.
      */
+    private String user;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
-
+    public void init(String institutionName){
+        user = institutionName;
+    }
     @FXML
     private void sscOption(MouseEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader();
@@ -45,7 +48,7 @@ public class InstitutionPublicExamOption1Controller implements Initializable {
         CheckRegistrationApplicationsController controller = loader.getController();
 
         //controller = new PersonViewSceneController();
-        controller.init("SSC");
+        controller.init("SSC", user);
 
         Stage checkRegistrationApplicationsStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         checkRegistrationApplicationsStage.setScene(checkRegistrationApplicationsScene);
@@ -66,7 +69,7 @@ public class InstitutionPublicExamOption1Controller implements Initializable {
         CheckRegistrationApplicationsController controller = loader.getController();
 
         //controller = new PersonViewSceneController();
-        controller.init("HSC");
+        controller.init("HSC", user);
 
         Stage checkRegistrationApplicationsStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         checkRegistrationApplicationsStage.setScene(checkRegistrationApplicationsScene);

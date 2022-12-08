@@ -14,6 +14,13 @@ import java.io.OutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import javafx.beans.property.SimpleStringProperty;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 /**
  *
@@ -22,21 +29,18 @@ import javafx.beans.property.SimpleStringProperty;
 public class Institution extends User implements Serializable{
     private String rank;
     private String EIIN;
-    private ArrayList<Campus> campus;
+    private ArrayList<Campus> campus = new ArrayList();
 
 
-    public Institution(String rank, String userName, String userid, String email, String password, String EIIN) {
+    public Institution(String rank, String userName, String userid, String email, String password, String EIIN, Campus campus) {
         super(userName, userid, email, password);
         this.rank = rank;
         this.EIIN = EIIN;
-        campus.add(new Campus());
+        this.campus.add(campus);
     }
-    public void setCampus(){
-        this.campus.add(new Campus());
+
+    public Institution() {
     }
-    public ArrayList<Campus> getCampus(){
-        return campus;
-    } 
     public String getEIIN() {
         return EIIN;
     }
@@ -84,23 +88,40 @@ public class Institution extends User implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
-    
+    public void getStudentCertificates(MouseEvent event) {
+    }
 
-   
-    
-    private void createRankFile(String name, String rank) {
-        try {
-                File f = new File("InstitutionRank.txt");
-                FileWriter fw;
-                if(f.exists())
-                    fw = new FileWriter(f,true);
-                else 
-                    fw = new FileWriter(f);
-                String str = "";
-                str += name+","+rank+"\n";
-                fw.write(str);
-                fw.close();
-            } 
-        catch (IOException ex) { }
+    public void publishTeacherCircular(MouseEvent event) {
+    }
+
+    public void publishAdmissionCircular(MouseEvent event) {
+    }
+
+    public void makeExamSeatPlans(MouseEvent event) {
+    }
+
+    public void registerBoardExam(MouseEvent event) throws IOException {
+        System.out.println(this.userName);
+        FXMLLoader loader = new FXMLLoader();
+                            loader.setLocation(getClass().getResource("institutionPublicExamOption1.fxml"));
+                            Parent registrationFormParent = loader.load();
+                            Scene registrationFormScene = new Scene(registrationFormParent);
+
+                            InstitutionPublicExamOption1Controller controller = loader.getController();
+                            controller.init(this.userName);
+
+                            Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                            registrationFormStage.setScene(registrationFormScene);
+                            registrationFormStage.setTitle("Dhaka Education Board");
+                            registrationFormStage.show();
+    }
+
+    public void registerInstitute(MouseEvent event) {
+    }
+
+    public void budgetExpansion(MouseEvent event) {
+    }
+
+    public void scholarshipRequests(MouseEvent event) {
     }
 }

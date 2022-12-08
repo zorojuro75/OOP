@@ -38,53 +38,7 @@ public class RegistrarOfficeHomeController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void confirmEnrollRequests(MouseEvent event) {
-    }
-
-    @FXML
-    private void registerInstitution(MouseEvent event) throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("viewInstiReg.fxml"));
-        Parent registrationFormParent = loader.load();
-        Scene registrationFormScene = new Scene(registrationFormParent);
-
-        LoginController controller = loader.getController();
-//        controller.init();
-
-        Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        registrationFormStage.setScene(registrationFormScene);
-        registrationFormStage.setTitle("Dhaka Education Board");
-        registrationFormStage.show();
-    }
-
-    @FXML
-    private void prepareRegistrationCards(MouseEvent event) {
-    }
-
-    @FXML
-    private void prepareAdmitCards(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewStudentInformation(MouseEvent event) {
-    }
-
-    @FXML
-    private void updateCorrectionRequests(MouseEvent event) {
-    }
-
-    @FXML
-    private void handleStudentMigrations(MouseEvent event) {
-    }
-
-    @FXML
-    private void requestBillChange(MouseEvent event) {
-    }
-
-    @FXML
-    private void logout(MouseEvent event) {
-    }
+    
 
     public void init(String name, String id){
         nameLabel.setText("Name : "+ name);

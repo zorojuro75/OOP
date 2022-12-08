@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="901.0" style="-fx-background-color: #406E8E;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.StudentHomeController">
+<AnchorPane id="AnchorPane" prefHeight="636.0" prefWidth="901.0" style="-fx-background-color: #8EA8C3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.StudentHomeController">
    <children>
       <Label layoutX="310.0" layoutY="99.0" text="Student Dashboard">
          <font>
@@ -22,47 +22,47 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewBoardExamResults" prefHeight="61.0" prefWidth="267.0" text="Board Exam Results">
+      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewBoardExamResultsOnClick" prefHeight="61.0" prefWidth="267.0" text="Board Exam Results">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#applyRegistration" prefHeight="61.0" prefWidth="267.0" text="Apply For Registration">
+      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#applyRegistrationOnClck" prefHeight="61.0" prefWidth="267.0" text="Apply For Registration">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#applyRechecking" prefHeight="61.0" prefWidth="267.0" text="Apply For Rechecking">
+      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#applyRecheckingOnClick" prefHeight="61.0" prefWidth="267.0" text="Apply For Rechecking">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewSeatPlan" prefHeight="61.0" prefWidth="267.0" text="Seat Plan">
+      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewSeatPlanOnClick" prefHeight="61.0" prefWidth="267.0" text="Seat Plan">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#editPersonalInformation" prefHeight="61.0" prefWidth="267.0" text="Edit Personal Information">
+      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#editPersonalInformationOnClick" prefHeight="61.0" prefWidth="267.0" text="Edit Personal Information">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#applyCollege" prefHeight="61.0" prefWidth="267.0" text="Apply For College">
+      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#applyCollegeOnClick" prefHeight="61.0" prefWidth="267.0" text="Apply For College">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#changeInstitution" prefHeight="61.0" prefWidth="267.0" text="Change Institution">
+      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#changeInstitutionOnClick" prefHeight="61.0" prefWidth="267.0" text="Change Institution">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#applyScholarship" prefHeight="61.0" prefWidth="267.0" text="Apply For Scholarship">
+      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#applyScholarshipOnClick" prefHeight="61.0" prefWidth="267.0" text="Apply For Scholarship">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: #23395B;" text="Log Out" textFill="#2af80a">
+      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logoutOnclick" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: #23395B;" text="Log Out" textFill="#2af80a">
          <font>
             <Font size="15.0" />
          </font></Button>

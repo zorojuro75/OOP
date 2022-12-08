@@ -6,8 +6,12 @@
 package dhakaeducationboard;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -18,6 +22,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
@@ -36,52 +41,80 @@ public class RegistrationFormController implements Initializable {
     @FXML
     private TextField rollNumberTextField;
     @FXML
-    private TextField institutionNameTextField;
-    @FXML
     private TextField sessionTextField;
     @FXML
     private Label examOptionLabel;
     private String exam;
+    @FXML
+    private ComboBox<String> institutionNameComboBox;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            f = new File("Institution.bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            Institution p;
+            try {
+                while (true) {
+                    p = (Institution) ois.readObject();
+                    institutionNameComboBox.getItems().add(p.getUserName());
+                }
+            }//end of nested try
+            catch (Exception e) {
+                //
+            }//nested catch             
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+        }
+
     }
 
     public void init(String option) {
-        exam =option;
-        examOptionLabel.setText(option+" Registration Form");
+        exam = option;
+        examOptionLabel.setText(option + " Registration Form");
     }
 
     @FXML
     private void submitForm(MouseEvent event) throws IOException {
         File f = null;
-        FileWriter fw = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
 
         try {
-
-            f = new File(exam + ".txt");
-            if (f.exists()) {
-                fw = new FileWriter(f, true);
+            if (exam.equals("HSC")) {
+                f = new File(institutionNameComboBox.getValue()+"HSC.bin");
             } else {
-                fw = new FileWriter(f);
+                f = new File(institutionNameComboBox.getValue()+"SSC.bin");
             }
-            fw.write(
-                    rollNumberTextField.getText() + ","
-                    + nameTextField.getText() + ","
-                    + institutionNameTextField.getText() + ","
-                    + sessionTextField.getText() + "\n"
-            );
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            RegistrationForm s = new RegistrationForm(nameTextField.getText(), Integer.parseInt(rollNumberTextField.getText()), institutionNameComboBox.getValue(), sessionTextField.getText());
+            oos.writeObject(s);
 
         } catch (IOException ex) {
         } finally {
             try {
-                if (fw != null) {
-                    fw.close();
+                if (oos != null) {
+                    oos.close();
                 }
-
             } catch (IOException ex) {
             }
         }

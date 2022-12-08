@@ -22,46 +22,46 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#getStudentCertificates" prefHeight="61.0" prefWidth="267.0" text="Student Certificates">
+      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#getStudentCertificatesOnClick" prefHeight="61.0" prefWidth="267.0" text="Student Certificates">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#publishTeacherCircular" prefHeight="61.0" prefWidth="267.0" text="Teacher Circular">
+      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#publishTeacherCircularOnClick" prefHeight="61.0" prefWidth="267.0" text="Teacher Circular">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#publishAdmissionCircular" prefHeight="61.0" prefWidth="267.0" text="Admission Circular">
+      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#publishAdmissionCircularOnClick" prefHeight="61.0" prefWidth="267.0" text="Admission Circular">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#makeExamSeatPlans" prefHeight="61.0" prefWidth="267.0" text="Board Exam Seat Plans">
+      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#makeExamSeatPlansOnClick" prefHeight="61.0" prefWidth="267.0" text="Board Exam Seat Plans">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#registerBoardExam" prefHeight="61.0" prefWidth="267.0" text="Board Exam Registration">
+      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#registerBoardExamOnClick" prefHeight="61.0" prefWidth="267.0" text="Board Exam Registration">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#registerInstitute" prefHeight="61.0" prefWidth="267.0" text="Institute Registration">
+      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#registerInstituteOnClick" prefHeight="61.0" prefWidth="267.0" text="Institute Registration">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#budgetExpansion" prefHeight="61.0" prefWidth="267.0" text="Budget Expansion">
+      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#budgetExpansionOnClick" prefHeight="61.0" prefWidth="267.0" text="Budget Expansion">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#scholarshipRequests" prefHeight="61.0" prefWidth="267.0" text="Scholarship Requests">
+      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#scholarshipRequestsOnClick" prefHeight="61.0" prefWidth="267.0" text="Scholarship Requests">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
+      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logoutOnClick" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
    </children>
 </AnchorPane>
