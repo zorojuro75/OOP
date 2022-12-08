@@ -42,12 +42,14 @@ public class RegistrationFormController implements Initializable {
     private TextField rollNumberTextField;
     @FXML
     private TextField sessionTextField;
-    @FXML
-    private Label examOptionLabel;
     private String exam;
     @FXML
     private ComboBox<String> institutionNameComboBox;
-
+    @FXML
+    private ComboBox<String> examComboBox;
+    @FXML
+    private ComboBox<String> paymentComboBox;
+    private Student std;
     /**
      * Initializes the controller class.
      */
@@ -79,21 +81,27 @@ public class RegistrationFormController implements Initializable {
             } catch (IOException ex) {
             }
         }
+        paymentComboBox.getItems().addAll("Bkash", "Rocket", "Nagad", "Credit/Debit Card");
+        paymentComboBox.setValue("Bkash");
+        examComboBox.getItems().addAll("SSC", "HSC");
+        examComboBox.setValue("SSC");
 
     }
-
-    public void init(String option) {
-        exam = option;
-        examOptionLabel.setText(option + " Registration Form");
+    public void init(Student s){
+        std =s;
     }
 
     @FXML
     private void submitForm(MouseEvent event) throws IOException {
         File f = null;
+        File f2 = null;
         FileOutputStream fos = null;
+        FileOutputStream fos2 = null;
         ObjectOutputStream oos = null;
-
+        ObjectOutputStream oos2 = null;
+        exam = examComboBox.getValue();
         try {
+            f2 = new File(institutionNameComboBox.getValue()+".bin");
             if (exam.equals("HSC")) {
                 f = new File(institutionNameComboBox.getValue()+"HSC.bin");
             } else {
@@ -106,8 +114,17 @@ public class RegistrationFormController implements Initializable {
                 fos = new FileOutputStream(f);
                 oos = new ObjectOutputStream(fos);
             }
-            RegistrationForm s = new RegistrationForm(nameTextField.getText(), Integer.parseInt(rollNumberTextField.getText()), institutionNameComboBox.getValue(), sessionTextField.getText());
+            if (f2.exists()) {
+                fos2 = new FileOutputStream(f2, true);
+                oos2 = new AppendableObjectOutputStream(fos2);
+            } else {
+                fos2 = new FileOutputStream(f2);
+                oos2 = new ObjectOutputStream(fos2);
+            }
+            std.setInstitutename(institutionNameComboBox.getValue());
+            RegistrationForm s = new RegistrationForm(nameTextField.getText(), rollNumberTextField.getText(), institutionNameComboBox.getValue(), sessionTextField.getText());
             oos.writeObject(s);
+            oos2.writeObject(std);
 
         } catch (IOException ex) {
         } finally {
@@ -119,13 +136,55 @@ public class RegistrationFormController implements Initializable {
             }
         }
         if (true) {
-            Parent paymentOptionParent = FXMLLoader.load(getClass().getResource("paymentOption.fxml"));
+            Parent paymentOptionParent = FXMLLoader.load(getClass().getResource("studentHome.fxml"));
             Scene paymentOptionScene = new Scene(paymentOptionParent);
             Stage paymentOptionStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             paymentOptionStage.setScene(paymentOptionScene);
             paymentOptionStage.setTitle("Dhaka Education Board");
             paymentOptionStage.show();
         }
+    }
+
+    @FXML
+    private void viewCardOnClick(MouseEvent event) throws IOException {
+        File f = null;
+        FileInputStream fis = null;
+        ObjectInputStream ois = null;
+        try {
+            f = new File("regestered"+ std.getInstitutename() + exam + ".bin");
+            fis = new FileInputStream(f);
+            ois = new ObjectInputStream(fis);
+            RegistrationCard p;
+            try {
+                while (true) {
+                    p = (RegistrationCard) ois.readObject();
+                    if(p.getStudentName().equals(std.userName)){
+                        std.setRegCard(p);
+                    }
+                }
+            } catch (Exception e) {
+            }
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex) {
+            }
+        }
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("viewRegCard.fxml"));
+        Parent registrationFormParent = loader.load();
+        Scene registrationFormScene = new Scene(registrationFormParent);
+
+        ViewRegCardController controller = loader.getController();
+        System.out.println(std.toString());
+        controller.init(std, exam);
+        Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        registrationFormStage.setScene(registrationFormScene);
+        registrationFormStage.setTitle("Dhaka Education Board");
+        registrationFormStage.show();
     }
 
 }

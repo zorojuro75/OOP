@@ -8,8 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="731.0" prefWidth="878.0" style="-fx-background-color: #8EA8C3;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="dhakaeducationboard.PrepareRegSceneController">
+<AnchorPane id="AnchorPane" prefHeight="731.0" prefWidth="878.0" style="-fx-background-color: #8EA8C3;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.PrepareRegSceneController">
    <children>
       <Label layoutX="286.0" layoutY="46.0" text="Prepare Registration Cards">
          <font>
@@ -46,5 +45,7 @@
             <Font size="14.0" />
          </font>
       </Button>
+      <Button layoutX="126.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#dashboardOnClick" text="DashBoard" />
+      <Button layoutX="707.0" layoutY="46.0" mnemonicParsing="false" onMouseClicked="#logoutOnClick" text="Logout" />
    </children>
 </AnchorPane>

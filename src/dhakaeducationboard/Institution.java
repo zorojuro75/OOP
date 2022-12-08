@@ -26,11 +26,11 @@ import javafx.stage.Stage;
  *
  * @author willi
  */
-public class Institution extends User implements Serializable{
+public class Institution extends User implements Serializable {
+
     private String rank;
     private String EIIN;
     private ArrayList<Campus> campus = new ArrayList();
-
 
     public Institution(String rank, String userName, String userid, String email, String password, String EIIN, Campus campus) {
         super(userName, userid, email, password);
@@ -41,6 +41,7 @@ public class Institution extends User implements Serializable{
 
     public Institution() {
     }
+
     public String getEIIN() {
         return EIIN;
     }
@@ -88,6 +89,7 @@ public class Institution extends User implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
+
     public void getStudentCertificates(MouseEvent event) {
     }
 
@@ -100,20 +102,19 @@ public class Institution extends User implements Serializable{
     public void makeExamSeatPlans(MouseEvent event) {
     }
 
-    public void registerBoardExam(MouseEvent event) throws IOException {
-        System.out.println(this.userName);
+    public void registerBoardExam(MouseEvent event, Institution I) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-                            loader.setLocation(getClass().getResource("institutionPublicExamOption1.fxml"));
-                            Parent registrationFormParent = loader.load();
-                            Scene registrationFormScene = new Scene(registrationFormParent);
+        loader.setLocation(getClass().getResource("checkRegistrationApplications.fxml"));
+        Parent registrationFormParent = loader.load();
+        Scene registrationFormScene = new Scene(registrationFormParent);
 
-                            InstitutionPublicExamOption1Controller controller = loader.getController();
-                            controller.init(this.userName);
+        CheckRegistrationApplicationsController controller = loader.getController();
+        controller.init(I);
 
-                            Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                            registrationFormStage.setScene(registrationFormScene);
-                            registrationFormStage.setTitle("Dhaka Education Board");
-                            registrationFormStage.show();
+        Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        registrationFormStage.setScene(registrationFormScene);
+        registrationFormStage.setTitle("Dhaka Education Board");
+        registrationFormStage.show();
     }
 
     public void registerInstitute(MouseEvent event) {

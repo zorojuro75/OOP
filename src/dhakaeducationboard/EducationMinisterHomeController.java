@@ -5,6 +5,7 @@
  */
 package dhakaeducationboard;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -23,7 +24,7 @@ public class EducationMinisterHomeController implements Initializable {
     private Label nameLabel;
     @FXML
     private Label idLabel;
-
+    private EducationMinister edumini = new EducationMinister();
     /**
      * Initializes the controller class.
      */
@@ -32,45 +33,49 @@ public class EducationMinisterHomeController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void requirementRequests(MouseEvent event) {
-    }
-
-    @FXML
-    private void officialRequests(MouseEvent event) {
-    }
-
-    @FXML
-    private void logout(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewPercentagePassFail(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewStudentCount(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewPercentageGenders(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewTeacherStaffCount(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewInstituteScholarshipBudgets(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewRankings(MouseEvent event) {
-    }
+    
 
     public void init(String name, String id){
         nameLabel.setText("Name : "+ name);
         idLabel.setText("ID : "+ id);
+    }
+
+    @FXML
+    private void viewPercentagePassFailOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewStudentCountOnClick(MouseEvent event) throws IOException {
+        edumini.viewStudentCount(event);
+    }
+
+    @FXML
+    private void viewPercentageGendersOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewTeacherStaffCountOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewInstituteScholarshipBudgetsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void requirementRequestsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void officialRequestsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewRankingsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void logoutOnClick(MouseEvent event) throws IOException {
+        edumini.logout(event);
     }
     
 }

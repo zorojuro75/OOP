@@ -23,6 +23,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -47,27 +48,31 @@ public class CheckRegistrationApplicationsController implements Initializable {
     private TableColumn<RegistrationForm, String> institute;
     @FXML
     private TableColumn<RegistrationForm, String> session;
+    @FXML
+    private ComboBox<String> examComboBox;
+    private Institution I = new Institution();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
+        examComboBox.getItems().addAll("HSC", "SSC");
+        examComboBox.setValue("HSC");
     }
 
-    public void init(String exam, String institutionName) {
+    public void init(Institution i) {
+        I =i;
+    }
+
+    @FXML
+    private void showApplicantsOnClick(MouseEvent event) {
         name.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("name"));
         rollnumber.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("rollNumber"));
         institute.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("instituteName"));
         session.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("session"));
-        applicationTableView.setItems(getApplications(exam, institutionName));
+        applicationTableView.setItems(getApplications(examComboBox.getValue(), I.userName));
     }
-
-    @FXML
-    private void sendApplications(MouseEvent event) {
-    }
-    
      public ObservableList<RegistrationForm> getApplications(String exam, String institutionName) {
         ObservableList<RegistrationForm> registrationForm = FXCollections.observableArrayList();
         File f = null;
@@ -95,6 +100,41 @@ public class CheckRegistrationApplicationsController implements Initializable {
             }
         }
         return registrationForm;
+    }
+
+    @FXML
+    private void sendApplicationsOnClick(MouseEvent event) {
+        
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            f = new File("reg"+I.userName+examComboBox.getValue()+".bin");
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            
+            RegistrationForm s = applicationTableView.getSelectionModel().getSelectedItem();
+            oos.writeObject(s);
+
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (oos != null) {
+                    oos.close();
+                }
+            } catch (IOException ex) {
+            }
+        }
+    }
+
+    @FXML
+    private void logoutOnClick(MouseEvent event) throws IOException {
+        I.logout(event);
     }
 
 }

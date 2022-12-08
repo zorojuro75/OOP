@@ -11,8 +11,8 @@
    <children>
       <TextField fx:id="nameTextField" layoutX="315.0" layoutY="144.0" prefHeight="31.0" prefWidth="180.0" />
       <TextField fx:id="rollNumberTextField" layoutX="315.0" layoutY="189.0" prefHeight="31.0" prefWidth="180.0" />
-      <TextField fx:id="sessionTextField" layoutX="315.0" layoutY="281.0" prefHeight="31.0" prefWidth="180.0" />
-      <Label fx:id="examOptionLabel" layoutX="147.0" layoutY="58.0" text="Public Exam Registration Form">
+      <TextField fx:id="sessionTextField" layoutX="315.0" layoutY="279.0" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="148.0" layoutY="34.0" text="Public Exam Registration Form">
          <font>
             <Font size="23.0" />
          </font>
@@ -32,16 +32,33 @@
             <Font size="17.0" />
          </font>
       </Label>
-      <Label layoutX="108.0" layoutY="284.0" text="Session">
+      <Label layoutX="108.0" layoutY="281.0" text="Session">
          <font>
             <Font size="17.0" />
          </font>
       </Label>
-      <Button layoutX="239.0" layoutY="349.0" mnemonicParsing="false" onMouseClicked="#submitForm" prefHeight="51.0" prefWidth="126.0" text="Submit">
+      <Button layoutX="369.0" layoutY="377.0" mnemonicParsing="false" onMouseClicked="#submitForm" prefHeight="34.0" prefWidth="126.0" text="Submit">
          <font>
-            <Font size="18.0" />
+            <Font size="16.0" />
          </font>
       </Button>
       <ComboBox fx:id="institutionNameComboBox" layoutX="315.0" layoutY="234.0" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="108.0" layoutY="99.0" text="Examnination">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="examComboBox" layoutX="315.0" layoutY="97.0" prefHeight="31.0" prefWidth="180.0" />
+      <Label layoutX="108.0" layoutY="322.0" text="Payment Mathod">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="paymentComboBox" layoutX="315.0" layoutY="320.0" prefHeight="31.0" prefWidth="180.0" />
+      <Button layoutX="96.0" layoutY="377.0" mnemonicParsing="false" onMouseClicked="#viewCardOnClick" prefHeight="35.0" prefWidth="214.0" text="View Registration Card">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

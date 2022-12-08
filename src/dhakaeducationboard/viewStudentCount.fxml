@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="783.0" prefWidth="860.0" style="-fx-background-color: #8EA8C3;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="dhakaeducationboard.ViewStudentCountController">
+   <children>
+      <Label layoutX="346.0" layoutY="60.0" text="Student List">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Button layoutX="41.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#dashboard" prefHeight="32.0" prefWidth="101.0" style="-fx-background-color: #23395B;" text="Dashboard" textFill="#00ff2c">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Button layoutX="721.0" layoutY="28.0" mnemonicParsing="false" onMouseClicked="#logOut" prefHeight="32.0" prefWidth="101.0" style="-fx-background-color: #23395B;" text="Log Out" textFill="#ff2600">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <Label layoutX="217.0" layoutY="119.0" text="Institution Name">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="institutionNameCombo" layoutX="375.0" layoutY="121.0" prefHeight="25.0" prefWidth="148.0" />
+      <Button layoutX="544.0" layoutY="118.0" mnemonicParsing="false" onMouseClicked="#showList" prefHeight="32.0" prefWidth="101.0" style="-fx-background-color: #23395B;" text="Show List" textFill="#00ff2c">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <TableView fx:id="studentTableView" layoutX="35.0" layoutY="216.0" prefHeight="545.0" prefWidth="791.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="130.0" text="Student ID" />
+          <TableColumn fx:id="name" prefWidth="391.0" text="Student Name" />
+            <TableColumn fx:id="email" prefWidth="269.0" text="Email" />
+        </columns>
+      </TableView>
+      <Label fx:id="institutionStudentCount" layoutX="319.0" layoutY="168.0" text="Institution Student Count">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

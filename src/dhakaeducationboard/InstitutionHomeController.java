@@ -30,7 +30,7 @@ public class InstitutionHomeController implements Initializable {
     @FXML
     private Label idLabel;
     private String userName="";
-    Institution I;
+    Institution I = new Institution();
     /**
      * Initializes the controller class.
      */
@@ -67,7 +67,7 @@ public class InstitutionHomeController implements Initializable {
 
     @FXML
     private void registerBoardExamOnClick(MouseEvent event) throws IOException {
-        I.registerBoardExam(event);
+        I.registerBoardExam(event, I);
     }
 
     @FXML

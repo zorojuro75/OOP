@@ -37,9 +37,10 @@ public class StudentHomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    public void init(String name, String id){
+    public void init(String name, String id, Student S){
         nameLabel.setText("Name : "+ name);
         idLabel.setText("ID : "+ id);
+        s=S;
     }
 
     @FXML
@@ -49,7 +50,7 @@ public class StudentHomeController implements Initializable {
 
     @FXML
     private void applyRegistrationOnClck(MouseEvent event) throws IOException {
-        s.applyRegistration(event);
+        s.applyRegistration(event, s);
     }
 
     @FXML

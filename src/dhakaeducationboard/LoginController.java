@@ -75,7 +75,7 @@ public class LoginController implements Initializable {
                             Scene registrationFormScene = new Scene(registrationFormParent);
 
                             StudentHomeController controller = loader.getController();
-                            controller.init(p.getUserName(), p.getUserid());
+                            controller.init(p.getUserName(), p.getUserid(), (Student)p);
 
                             Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                             registrationFormStage.setScene(registrationFormScene);

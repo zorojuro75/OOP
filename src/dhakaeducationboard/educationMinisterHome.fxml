@@ -22,46 +22,46 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewPercentagePassFail" prefHeight="61.0" prefWidth="267.0" text="Percentage Of Pass/Fail">
+      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewPercentagePassFailOnClick" prefHeight="61.0" prefWidth="267.0" text="Percentage Of Pass/Fail">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#viewStudentCount" prefHeight="61.0" prefWidth="267.0" text="Student Count">
+      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#viewStudentCountOnClick" prefHeight="61.0" prefWidth="267.0" text="Student Count">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#viewPercentageGenders" prefHeight="61.0" prefWidth="267.0" text="Percentage Of Genders">
+      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#viewPercentageGendersOnClick" prefHeight="61.0" prefWidth="267.0" text="Percentage Of Genders">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewTeacherStaffCount" prefHeight="61.0" prefWidth="267.0" text="Teacher &amp; Staff Count">
+      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewTeacherStaffCountOnClick" prefHeight="61.0" prefWidth="267.0" text="Teacher &amp; Staff Count">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewInstituteScholarshipBudgets" prefHeight="61.0" prefWidth="267.0" text="Institute &amp; Scholarship Budgets">
+      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#viewInstituteScholarshipBudgetsOnClick" prefHeight="61.0" prefWidth="267.0" text="Institute &amp; Scholarship Budgets">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#requirementRequests" prefHeight="61.0" prefWidth="267.0" text="Institute Requirement Requests">
+      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#requirementRequestsOnClick" prefHeight="61.0" prefWidth="267.0" text="Institute Requirement Requests">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#officialRequests" prefHeight="61.0" prefWidth="267.0" text="Official Requests">
+      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#officialRequestsOnClick" prefHeight="61.0" prefWidth="267.0" text="Official Requests">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewRankings" prefHeight="61.0" prefWidth="267.0" text="Institute Rankings">
+      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewRankingsOnClick" prefHeight="61.0" prefWidth="267.0" text="Institute Rankings">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
+      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logoutOnClick" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
    </children>
 </AnchorPane>

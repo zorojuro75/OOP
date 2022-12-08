@@ -30,8 +30,6 @@ public class ViewRegCardController implements Initializable {
     @FXML
     private Label regNumberLabel;
     @FXML
-    private Label centerLabel;
-    @FXML
     private Label nameLabel;
     @FXML
     private Label rollLabel;
@@ -39,23 +37,28 @@ public class ViewRegCardController implements Initializable {
     private Label sessionLabel;
     @FXML
     private Label institutionNameLabel;
-
+    private Student s;
+    private String e;
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        examLabel.setText(e);
+        regNumberLabel.setText(Integer.toString(s.getRegCard().getRegID()));
+        nameLabel.setText(s.userName);
+        rollLabel.setText(Integer.toString(s.getRegCard().getRollNumber()));
+        sessionLabel.setText(s.getRegCard().getSessionName());
+        institutionNameLabel.setText(s.getInstitutename());
+        
     }
-
+    public void init(Student std, String exam){
+        e= exam;
+        s =std;
+    }
     @FXML
     private void logOut(MouseEvent event) throws IOException {
-        Parent loginParent = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Scene loginScene = new Scene(loginParent);
-        Stage loginStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        loginStage.setScene(loginScene);
-        loginStage.setTitle("Dhaka Education Board");
-        loginStage.show();
+        s.logout(event);
     }
 
     @FXML

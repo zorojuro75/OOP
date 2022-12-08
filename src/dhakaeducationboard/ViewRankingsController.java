@@ -35,7 +35,7 @@ public class ViewRankingsController implements Initializable {
     private TableColumn<Institution, String> institutionName;
     @FXML
     private TableColumn<Institution, String> rank;
-
+    private ScholarshipOffice so = new ScholarshipOffice();
     /**
      * Initializes the controller class.
      */
@@ -52,7 +52,8 @@ public class ViewRankingsController implements Initializable {
     }
 
     @FXML
-    private void logOut(MouseEvent event) {
+    private void logOut(MouseEvent event) throws IOException {
+        so.logout(event);
     }
 
     public ObservableList<Institution> getInstitutions() {

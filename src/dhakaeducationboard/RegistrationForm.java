@@ -13,11 +13,11 @@ import java.io.Serializable;
  */
 public class RegistrationForm implements Serializable {
     private String name;
-    private int rollNumber;
+    private String rollNumber;
     private String instituteName;
     private String session;
 
-    public RegistrationForm(String name, int rollNumber, String instituteName, String Session) {
+    public RegistrationForm(String name, String rollNumber, String instituteName, String Session) {
         this.name = name;
         this.rollNumber = rollNumber;
         this.instituteName = instituteName;
@@ -32,11 +32,11 @@ public class RegistrationForm implements Serializable {
         this.name = name;
     }
 
-    public int getRollNumber() {
+    public String getRollNumber() {
         return rollNumber;
     }
 
-    public void setRollNumber(int rollNumber) {
+    public void setRollNumber(String rollNumber) {
         this.rollNumber = rollNumber;
     }
 

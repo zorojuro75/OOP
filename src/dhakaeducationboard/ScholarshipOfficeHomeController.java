@@ -77,7 +77,8 @@ public class ScholarshipOfficeHomeController implements Initializable {
     }
 
     @FXML
-    private void logoutOnclick(MouseEvent event) {
+    private void logoutOnclick(MouseEvent event) throws IOException {
+        so.logout(event);
     }
     
 }

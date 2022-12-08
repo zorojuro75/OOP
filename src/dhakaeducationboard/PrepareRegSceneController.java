@@ -7,9 +7,12 @@ package dhakaeducationboard;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -85,11 +88,35 @@ public class PrepareRegSceneController implements Initializable {
         institutionName.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("instituteName"));
         session.setCellValueFactory(new PropertyValueFactory<RegistrationForm, String>("session"));
         regCardTableView.setItems(getApplications(examTypeCombo.getValue(), institutionNameCombo.getValue()));
-        regCardTableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
     }
 
     @FXML
     private void createRegCardsOnClick(MouseEvent event) {
+        File f = null;
+        FileOutputStream fos = null;
+        ObjectOutputStream oos = null;
+        try {
+            f = new File("regestered"+institutionNameCombo.getValue()+examTypeCombo.getValue()+".bin");
+            if (f.exists()) {
+                fos = new FileOutputStream(f, true);
+                oos = new AppendableObjectOutputStream(fos);
+            } else {
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            RegistrationForm rf = regCardTableView.getSelectionModel().getSelectedItem();
+            RegistrationCard s = new RegistrationCard((new Random().nextInt(9000000)), Integer.parseInt(rf.getRollNumber()), rf.getName(),rf.getInstituteName(), rf.getSession());
+            oos.writeObject(s);
+
+        } catch (IOException ex) {
+        } finally {
+            try {
+                if (oos != null) {
+                    oos.close();
+                }
+            } catch (IOException ex) {
+            }
+        }
     }
 
     public ObservableList<RegistrationForm> getApplications(String exam, String institutionName) {
@@ -98,7 +125,7 @@ public class PrepareRegSceneController implements Initializable {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
         try {
-            f = new File(institutionName + exam + ".bin");
+            f = new File("reg"+institutionName + exam + ".bin");
             fis = new FileInputStream(f);
             ois = new ObjectInputStream(fis);
             RegistrationForm p;
@@ -119,5 +146,14 @@ public class PrepareRegSceneController implements Initializable {
             }
         }
         return registrationForm;
+    }
+
+    @FXML
+    private void dashboardOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void logoutOnClick(MouseEvent event) throws IOException {
+        (new RegistrarOffice()).logout(event);
     }
 }

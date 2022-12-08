@@ -19,16 +19,20 @@ import javafx.stage.Stage;
  * @author willi
  */
 public class Student extends User implements Serializable {
+
     Address address;
     private RegistrationCard regCard;
-    public Student(){
+    private String institutename;
+
+    public Student() {
     }
 
     public Student(String userName, String userid, String email, String password, Address a) {
         super(userName, userid, email, password);
         this.address = a;
-        regCard= new RegistrationCard();
+        regCard = new RegistrationCard();
     }
+
     public String getUserName() {
         return userName;
     }
@@ -57,37 +61,55 @@ public class Student extends User implements Serializable {
         return password;
     }
 
+    public RegistrationCard getRegCard() {
+        return regCard;
+    }
+
+    public void setRegCard(RegistrationCard regCard) {
+        this.regCard = regCard;
+    }
+
+    public String getInstitutename() {
+        return institutename;
+    }
+
+    public void setInstitutename(String institutename) {
+        this.institutename = institutename;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }
-    public void applyRegistration(MouseEvent event) throws IOException {
-        Parent studentPublicExamOption1Parent = FXMLLoader.load(getClass().getResource("studentPublicExamOption1.fxml"));
-        Scene studentPublicExamOption1Scene = new Scene(studentPublicExamOption1Parent);
-        Stage studentPublicExamOption1Stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        studentPublicExamOption1Stage.setScene(studentPublicExamOption1Scene);
-        studentPublicExamOption1Stage.setTitle("Dhaka Education Board");
-        studentPublicExamOption1Stage.show();
-    }
 
+    public void applyRegistration(MouseEvent event, Student s) throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("registrationForm.fxml"));
+        Parent registrationFormParent = loader.load();
+        Scene registrationFormScene = new Scene(registrationFormParent);
+
+        RegistrationFormController controller = loader.getController();
+        controller.init(s);
+
+        Stage registrationFormStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        registrationFormStage.setScene(registrationFormScene);
+        registrationFormStage.setTitle("Dhaka Education Board");
+        registrationFormStage.show();
+    }
 
     public void applyRechecking(MouseEvent event) {
     }
 
-
     public void viewSeatPlan(MouseEvent event) {
     }
 
-
     public void editPersonalInformation(MouseEvent event) {
     }
-
 
     public void applyCollege(MouseEvent event) {
     }
 
     public void changeInstitution(MouseEvent event) {
     }
-
 
     public void applyScholarship(MouseEvent event) {
     }
