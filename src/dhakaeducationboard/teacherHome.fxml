@@ -22,46 +22,46 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#applyExaminer" prefHeight="61.0" prefWidth="267.0" text="Apply For Examiner">
+      <Button layoutX="141.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#applyExaminerOnClick" prefHeight="61.0" prefWidth="267.0" text="Apply For Examiner">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#applyGovernmentTeacher" prefHeight="61.0" prefWidth="267.0" text="Apply For Government Teacher">
+      <Button layoutX="141.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#applyGovernmentTeacherOnClick" prefHeight="61.0" prefWidth="267.0" text="Apply For Government Teacher">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#submitGrades" prefHeight="61.0" prefWidth="267.0" text="Submit Grades">
+      <Button layoutX="141.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#submitGradesOnClick" prefHeight="61.0" prefWidth="267.0" text="Submit Grades">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#applyInvigilator" prefHeight="61.0" prefWidth="267.0" text="Apply For Invigilator">
+      <Button layoutX="141.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#applyInvigilatorOnClick" prefHeight="61.0" prefWidth="267.0" text="Apply For Invigilator">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#changeInstitution" prefHeight="61.0" prefWidth="267.0" text="Change Institution">
+      <Button layoutX="494.0" layoutY="280.0" mnemonicParsing="false" onMouseClicked="#changeInstitutionOnClick" prefHeight="61.0" prefWidth="267.0" text="Change Institution">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#checkExamScripts" prefHeight="61.0" prefWidth="267.0" text="Check Exam Scripts">
+      <Button layoutX="494.0" layoutY="356.0" mnemonicParsing="false" onMouseClicked="#checkExamScriptsOnClick" prefHeight="61.0" prefWidth="267.0" text="Check Exam Scripts">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#receiveExamScripts" prefHeight="61.0" prefWidth="267.0" text="Receive Exam Scripts">
+      <Button layoutX="494.0" layoutY="430.0" mnemonicParsing="false" onMouseClicked="#receiveExamScriptsOnClick" prefHeight="61.0" prefWidth="267.0" text="Receive Exam Scripts">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewClassSchedules" prefHeight="61.0" prefWidth="267.0" text="Class Schedules">
+      <Button layoutX="494.0" layoutY="506.0" mnemonicParsing="false" onMouseClicked="#viewClassSchedulesOnClick" prefHeight="61.0" prefWidth="267.0" text="Class Schedules">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logout" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
+      <Button layoutX="756.0" layoutY="24.0" mnemonicParsing="false" onMouseClicked="#logoutOnClick" prefHeight="31.0" prefWidth="118.0" text="Log Out" />
    </children>
 </AnchorPane>

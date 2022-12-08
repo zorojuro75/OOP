@@ -80,7 +80,8 @@ public class RegistrarOfficeHomeController implements Initializable {
     }
 
     @FXML
-    private void logoutOnClick(MouseEvent event) {
+    private void logoutOnClick(MouseEvent event) throws IOException {
+        R.logout(event);
     }
     
 }

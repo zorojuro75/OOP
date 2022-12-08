@@ -5,6 +5,7 @@
  */
 package dhakaeducationboard;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -23,7 +24,7 @@ public class TeacherHomeController implements Initializable {
     private Label nameLabel;
     @FXML
     private Label idLabel;
-
+    private Teacher teacher = new Teacher();
     /**
      * Initializes the controller class.
      */
@@ -32,45 +33,48 @@ public class TeacherHomeController implements Initializable {
         // TODO
     }    
 
-    @FXML
-    private void applyExaminer(MouseEvent event) {
-    }
-
-    @FXML
-    private void applyGovernmentTeacher(MouseEvent event) {
-    }
-
-    @FXML
-    private void submitGrades(MouseEvent event) {
-    }
-
-    @FXML
-    private void applyInvigilator(MouseEvent event) {
-    }
-
-    @FXML
-    private void changeInstitution(MouseEvent event) {
-    }
-
-    @FXML
-    private void checkExamScripts(MouseEvent event) {
-    }
-
-    @FXML
-    private void receiveExamScripts(MouseEvent event) {
-    }
-
-    @FXML
-    private void viewClassSchedules(MouseEvent event) {
-    }
-
-    @FXML
-    private void logout(MouseEvent event) {
-    }
 
     public void init(String name, String id){
         nameLabel.setText("Name : "+ name);
         idLabel.setText("ID : "+ id);
+    }
+
+    @FXML
+    private void applyExaminerOnClick(MouseEvent event) throws IOException {
+        teacher.applyExaminer(event);
+    }
+
+    @FXML
+    private void applyGovernmentTeacherOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void submitGradesOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void applyInvigilatorOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void changeInstitutionOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void checkExamScriptsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void receiveExamScriptsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void viewClassSchedulesOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void logoutOnClick(MouseEvent event) throws IOException {
+        teacher.logout(event);
     }
     
 }

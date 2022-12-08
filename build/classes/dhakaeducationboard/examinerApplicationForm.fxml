@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="397.0" prefWidth="590.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="dhakaeducationboard.ExaminerApplicationFormController">
+   <children>
+      <Label layoutX="161.0" layoutY="54.0" text="Examiner Application Form">
+         <font>
+            <Font name="System Bold" size="21.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="147.0" text="Teacher ID">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="187.0" text="Exam Option">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="232.0" text="Institute Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="118.0" layoutY="272.0" text="Subject">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idTextField" layoutX="323.0" layoutY="148.0" />
+      <ComboBox fx:id="examOptionCombo" layoutX="323.0" layoutY="188.0" prefWidth="150.0" />
+      <ComboBox fx:id="institutionNameCombo" layoutX="323.0" layoutY="233.0" prefWidth="150.0" />
+      <ComboBox fx:id="subjectCombo" layoutX="323.0" layoutY="273.0" prefWidth="150.0" />
+      <Button layoutX="257.0" layoutY="335.0" mnemonicParsing="false" onMouseClicked="#applyForExaminer" prefHeight="31.0" prefWidth="78.0" text="Apply">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
